@@ -3,7 +3,7 @@ local stdnse = require "stdnse"
 local shortport = require "shortport"
 
 description = [[
-Sends a POST request to /setup/setupadministrator.action on port 8090 and verifies user creation.
+ CVE-2023-22515
 ]]
 
 author = "Sirotkin Oleg"
@@ -62,7 +62,7 @@ local function send_post_request(host, port, path, data_table)
         ["X-Atlassian-Token"] = "no-check"
     }
 
-    -- Создаем объект запроса
+    
     local options = {
         header = headers,
         content = data
